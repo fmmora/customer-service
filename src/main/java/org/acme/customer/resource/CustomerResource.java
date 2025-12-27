@@ -18,14 +18,12 @@ public class CustomerResource {
 
     @GET
     @Path("/{id}")
-    @RolesAllowed({"USER"})
     public CustomerDTO getById(@PathParam("id") Long id) {
         return customerService.getById(id);
     }
 
     @GET
     @Path("/{id}/validate")
-    @RolesAllowed({"USER"})
     public CustomerValidationDTO validate(@PathParam("id") Long id) {
         return customerService.validateCustomer(id);
     }
